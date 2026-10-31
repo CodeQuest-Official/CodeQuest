@@ -1,0 +1,288 @@
+package com.codequest.app.data
+
+private data class EnglishCopy(
+    val chapter: String,
+    val title: String,
+    val explanation: String,
+    val breakdown: String,
+    val exercise: String,
+    val question: String,
+    val answers: List<String>
+)
+
+private val pythonEnglish = listOf(
+    EnglishCopy("Python basics", "Your first print()", "print() shows something on the screen. Put the message inside its parentheses and quotation marks, like a note inside a speech bubble.", "Python reads print(), then displays the text inside the parentheses.", "Use Python to display the text CodeQuest.", "Which command displays information?", listOf("print()", "input()", "type()", "range()")),
+    EnglishCopy("Python basics", "Run instructions in order", "Python reads code from top to bottom, one line at a time. Like steps in a recipe, the order changes what happens first.", "The first print runs before the second, so Start appears before Finish.", "Write two output commands: display Start first, then Finish.", "In what order does Python read the lines?", listOf("From top to bottom", "Randomly", "From bottom to top", "Only the last line")),
+    EnglishCopy("Python basics", "Fill in a print() command", "Use print() whenever you want Python to show something. The parentheses hold what you want to display.", "Python displays Hello because it is inside print().", "Fill in the blank so that the program displays Hello.", "Which command displays information?", listOf("print()", "input()", "type()", "range()")),
+    EnglishCopy("Python basics", "Printing text", "Text in Python is called a string. Put it between matching single or double quotation marks. The marks show Python where the text starts and ends; they are not part of the displayed message.", "Both examples display text. The opening and closing quotation marks must match.", "Display the text Learning is fun.", "How does Python recognize text?", listOf("Quotation marks", "Square brackets", "The word print", "A period")),
+    EnglishCopy("Python basics", "Printing numbers", "Numbers do not need quotation marks when you want Python to calculate with them. A number in quotation marks is text instead, like the number printed on a sign. Python works out arithmetic before displaying the result.", "The second line calculates and displays 12. The last line displays the character 8 as text.", "What does print(7 + 5) display? Write only the result.", "What does print(8 + 4) display?", listOf("84", "12", "8 + 4", "An error")),
+    EnglishCopy("Python basics", "Comments", "A comment is a note for people reading your code. Python skips it when the program runs. In Python, a comment starts with the # character, so you can explain why a line is there.", "The line starting with # is a note for you; only the second line displays a message.", "Add a comment, then display a greeting.", "Which character starts a Python comment?", listOf("#", "//", "/*", "--")),
+    EnglishCopy("Variables and data types", "What are variables?", "A variable is like a labelled box. Its name tells you what is stored, and you can use or change its value later. A single = puts the value on the right into the name on the left.", "age is the label and 15 is its first value. After the change, print displays the new value, 16.", "Store Berlin in a variable named city, then display city.", "What does a single equals sign do?", listOf("Assigns a value", "Compares two values", "Adds values", "Ends the program")),
+    EnglishCopy("Variables and data types", "Strings", "A string stores text, such as a name or a message. Put the text in matching quotation marks. The variable name itself is not text, so it does not need quotation marks.", "city stores text. The plus sign joins two pieces of text into one message.", "Create a variable called pet with the text Cat, then display it.", "Which value is a string?", listOf("17", "\"17\"", "True", "None")),
+    EnglishCopy("Variables and data types", "Integers", "An integer (int) is a whole number with no decimal part. You can use one to count, compare, and calculate. An age or a number of lives is often a good fit for an integer.", "Python takes the old value 12, adds 3, and stores 15 under points.", "Set count to 4, then display count plus 2.", "Which value is an integer?", listOf("3.5", "\"3\"", "3", "False")),
+    EnglishCopy("Variables and data types", "Floats", "A float is a number with a decimal part. Python writes a dot, not a comma, between the whole and fractional parts. Prices and measurements are common examples.", "Python doubles 2.5, so the displayed result is 5.0.", "Store 3.5 in temperature and display temperature.", "How does Python write three and a half?", listOf("3,5", "3.5", "\"3.5\"", "35")),
+    EnglishCopy("Variables and data types", "Booleans", "A Boolean has exactly two possible values: True and False. It can describe something like whether a game is running or a door is open. In Python, both values start with a capital letter.", "The variable stores the truth value True, and print displays it.", "Set online to False and display it.", "Which two values can a Boolean hold?", listOf("True and False", "Yes and No", "1 and 2", "On and Off")),
+    EnglishCopy("Variables and data types", "None", "None means that no value is currently here. It is not the number 0 or an empty string. It is useful when you want to leave a space empty until the program has a real value to put there.", "At first there is no answer. Later, the placeholder is replaced with the text Yes.", "Create a variable named result and set it to None.", "What does None mean?", listOf("No value is present", "The number zero", "An empty string", "False")),
+    EnglishCopy("Variables and data types", "Understanding data types", "A data type tells Python what kind of value something is and what you can sensibly do with it. You can join text and add numbers. The type() command lets you inspect a value.", "The first value is text (str); the second is a whole number (int).", "Set price to 4.5 and use type() to inspect it.", "What type is the value 3?", listOf("int", "str", "float", "bool")),
+    EnglishCopy("Variables and data types", "Type conversion", "Sometimes a number arrives as text. int() can turn text such as \"7\" into the whole number 7, and str() can turn a number into text. Conversion only works when the value makes sense for the requested type.", "int changes the digit text into a number; Python can then add 1 and display 8.", "Convert the text \"12\" with int(), then add 3.", "What does int(\"7\") do?", listOf("Turns it into the number 7", "Turns it into True", "Deletes the text", "Rounds it up")),
+    EnglishCopy("Conditionals", "if", "if means “when this is true.” Python runs the indented block only when its condition is true. The colon introduces the block, and indentation shows which instructions belong to it.", "Python first checks whether points is greater than 5. Since 10 is greater, it runs the indented print command.", "Display Yes when age is at least 18.", "When does an if block run?", listOf("When its condition is true", "Always", "Only with numbers", "When its condition is false")),
+    EnglishCopy("Conditionals", "else", "else means “otherwise.” It gives your program a second path when the if condition is not true. Python chooses the matching path, so one of these alternatives runs.", "Because rain is False, Python skips the if block and runs the else block.", "Check tired: display Rest when it is True, otherwise display Continue.", "When does else run?", listOf("When if is false", "Before if", "For every number", "Only after a loop")),
+    EnglishCopy("Conditionals", "elif", "elif means “otherwise, if.” It lets you check another case after the earlier condition was false. Python stops checking as soon as one case matches.", "Python checks the first case, then the second. The second matches, so it displays Good.", "Write an if and elif: place 1 earns Gold; place 2 earns Silver.", "What is elif for?", listOf("Checking another condition", "Creating a variable", "Starting a loop", "Displaying text")),
+    EnglishCopy("Conditionals", "Comparison operators", "Comparisons give you a Boolean: True or False. == checks equality, != checks inequality, and <, >, <=, and >= compare sizes. A common beginner mistake is confusing =, which assigns, with ==, which compares.", "Both comparisons are true: 12 is at least 10 and is equal to 12.", "Check whether points is equal to 100.", "Which operator checks equality?", listOf("=", "==", ">=", "!=")),
+    EnglishCopy("Conditionals", "Logical operators", "and joins two conditions and is true only when both are true. With or, either true condition is enough. not flips a truth value, like adding the word “not” to a sentence.", "Access is allowed only if the person is old enough and has a ticket.", "Check whether number is greater than 0 and less than 10.", "When is A and B true?", listOf("When both A and B are true", "When only A is true", "Always", "When both are false")),
+    EnglishCopy("Conditionals", "Combining conditions", "You can put one decision inside another. This lets you check a broad case first and a more specific case inside it. Indent each level so Python can see which steps belong together.", "First, member must be true. Inside that block, the score must also be at least 50.", "First check is_day, then check whether it is warm inside that block.", "What does nesting mean here?", listOf("One condition inside another", "Several files", "A data type", "An output")),
+    EnglishCopy("Loops", "for loops", "A for loop repeats a block once for each item in a sequence. It is useful for going through a collection or a known series. The loop variable changes to the next item each time.", "On the first pass, color is Red; on the second, it is Blue. print runs once for each pass.", "Use a loop to display Ada and Sam, one name at a time.", "When is for especially useful?", listOf("When going through a sequence", "Only for arithmetic", "For creating a class", "For ending a program")),
+    EnglishCopy("Loops", "while loops", "while repeats a block for as long as its condition is true. Change a value inside the block so the condition eventually becomes false. Otherwise, the loop may run forever.", "step increases after each pass. When it reaches 4, the condition is false and the loop ends.", "Count from 1 to 2 with while and increase the counter each time.", "What ends a while loop?", listOf("A false condition", "A print command", "A comment", "A string")),
+    EnglishCopy("Loops", "range()", "range() creates a number sequence for a loop. The stop number is not included: range(1, 4) gives 1, 2, and 3. This may feel surprising at first, but it makes the number of steps easy to work out.", "The loop runs three times with 1, 2, and 3. It stops before 4.", "Use range() to display 0, 1, and 2.", "Which values does range(1, 4) create?", listOf("1, 2, 3", "1, 2, 3, 4", "0, 1, 2, 3", "Only 4")),
+    EnglishCopy("Loops", "break and continue", "break ends a loop immediately. continue skips the rest of the current pass and moves on to the next one. These commands change the loop's flow without changing the condition itself.", "2 is skipped; the loop ends when it reaches 4. The visible numbers are 0, 1, and 3.", "Skip 2 with continue and stop before 4 with break.", "What does break do?", listOf("Ends the loop", "Skips one pass", "Restarts the loop", "Adds an item")),
+    EnglishCopy("Loops", "Nested loops", "A loop can contain another loop. For every pass of the outer loop, the inner loop runs all the way through. This is useful for rows and columns in a grid.", "The outer loop runs twice; the inner loop runs three times for each row, making six pairs in total.", "Create two rows, each with two star outputs.", "How many total inner-loop passes are there with 2 outer and 3 inner passes?", listOf("6", "5", "3", "2")),
+    EnglishCopy("Lists and data", "Creating lists", "A list holds several values in a particular order. Square brackets surround the values and commas separate them. Unlike a single variable, a list can grow and change.", "colors contains three text values. Their order is kept.", "Create a shopping list with Bread and Milk.", "Which brackets does a Python list use?", listOf("[]", "{}", "()", "<>")),
+    EnglishCopy("Lists and data", "Accessing elements", "Each item in a list has a position called an index. Python starts counting at 0, so the first item is at index 0. list[-1] gives you the last item.", "colors[0] is Red; colors[-1] is Blue.", "Display the second item in a variable named fruit.", "What index does the first list item have?", listOf("0", "1", "-1", "2")),
+    EnglishCopy("Lists and data", "append() and remove()", "append() adds an item to the end of a list. remove() deletes a matching item by its value. Both change the existing list, so you do not need to make a new one.", "append adds Cat. remove then removes Dog from the list.", "Add Tea to drinks and remove Water.", "What does append() do?", listOf("Adds an item at the end", "Sorts the list", "Deletes the list", "Returns the length")),
+    EnglishCopy("Lists and data", "Looping through lists", "A for loop can work with each list item in turn. The name after for holds the current item. This is often clearer than looking up each position by hand.", "On the first pass, name is Ada; on the next, it is Sam.", "Display each item in the numbers list.", "What does the loop variable contain?", listOf("The current list item", "Always the index", "The whole file", "The data type")),
+    EnglishCopy("Lists and data", "Dictionaries", "A dictionary stores related information as key-and-value pairs. Like a real dictionary, each key leads to its matching value. Curly braces and colons connect the keys and values.", "The key name leads to the value Mia; age leads to the number 12.", "Create a player dictionary with name Ada and level 2.", "How do you read the name?", listOf("person[\"name\"]", "person(0)", "person.name()", "person[0]")),
+    EnglishCopy("Lists and data", "Sets and tuples", "A tuple is an ordered collection that you do not change after creating; it uses parentheses. A set contains unique values without a fixed order; duplicates disappear.", "The tuple keeps its two positions. The set contains Red only once.", "Create an unchangeable tuple with the numbers 4 and 9.", "Which collection removes duplicate values?", listOf("A set", "A tuple", "A string", "An integer")),
+    EnglishCopy("Functions", "Functions with def", "A function is a named little program you can call when you need it. def starts the definition; the indented block describes what happens when you call it. Defining a function does not run it yet.", "The definition remembers the steps. wave() calls the function and displays Hello.", "Define greet() to display Hello, then call it.", "Which word begins a Python function?", listOf("def", "fun", "function", "make")),
+    EnglishCopy("Functions", "Parameters", "A parameter is a named input space in a function. When you call the function, you pass in a value called an argument. The same function can then work with different names.", "name is the parameter; Ada is the value passed in when the function is called.", "Write double(value) so that it displays value multiplied by 2.", "What is a parameter?", listOf("A named input for a function", "A loop", "A comment", "A return value")),
+    EnglishCopy("Functions", "return", "return sends a result back from a function so that the calling code can use it. print() only displays something; displaying and returning are different jobs.", "The function returns 5; the variable stores it and print displays it.", "Create square(number) and return number multiplied by itself.", "What does return do?", listOf("Returns a result", "Stops the app", "Creates a list", "Starts a loop")),
+    EnglishCopy("Functions", "Local and global variables", "A local variable exists inside its function. A global variable is created outside and can be seen in more places. Local names help keep functions tidy and avoid accidental changes elsewhere.", "color is global; message is created only inside the function.", "Create a function with a local variable called greeting and display it.", "Where can a local variable be used?", listOf("Inside its function", "Everywhere automatically", "Only in comments", "Only in lists")),
+    EnglishCopy("Advanced basics", "Understanding errors", "An error message tells you what Python could not understand or do. Syntax errors are about how code is written; runtime errors happen while it runs, such as dividing by zero. Read the message and its line number calmly.", "int cannot turn abc into a number, so it raises a ValueError and points to the line.", "Write a conversion that causes a ValueError and identify the problem.", "What helps you find an error?", listOf("Read the error message and line number", "Delete every line", "Change names at random", "Connect to the internet")),
+    EnglishCopy("Advanced basics", "try and except", "try and except handle an error you expect, so the program can respond helpfully. Put the risky step inside try and describe what to do for that error inside except.", "The conversion fails, so Python runs the matching except block.", "Use try and except to handle a ValueError from int(\"x\").", "What belongs inside except?", listOf("A response to the matching error", "The normal loop start", "A comment", "A variable name")),
+    EnglishCopy("Advanced basics", "Modules", "A module is a file of reusable tools. import makes a module's functions and values available, such as math for calculations. Reusing tools means you do not have to write everything yourself.", "import math makes the module available; sqrt calculates the square root and gives 4.0.", "Import math and calculate the square root of 25.", "What does import do?", listOf("Makes a module available", "Runs a loop", "Stores text", "Catches every error")),
+    EnglishCopy("Advanced basics", "Classes and objects", "A class is a blueprint; an object is one particular thing made from it. Classes group related data and functions. __init__ sets up a new object, and self refers to that particular object.", "Dog is the blueprint; my_dog is an object. Its name, Milo, is stored on the object.", "Define a Book class whose __init__ stores a title on the object.", "What is a class?", listOf("A blueprint for objects", "A single number", "An error", "A loop")),
+    EnglishCopy("Advanced basics", "Mini project: Shopping helper", "A small project brings lists and loops together. A shopping helper stores several items and displays them one at a time. Break the task into steps: make a list, add an item, then show the list.", "The list stores the items, append adds Milk, and for displays each item.", "Make a shopping list with two items, add Water, and display them all.", "Which ideas does this project use?", listOf("A list, append, and a loop", "Only comments", "Only a class", "Only a comparison")),
+    EnglishCopy("Advanced basics", "Mini project: Number quiz", "A quiz needs a question, a stored answer, and a decision. A function can reuse the check, while a condition provides useful feedback.", "The comparison checks the answer; one matching branch gives the response.", "Check whether answer is Ada and display Correct or Keep practising.", "Which part chooses the feedback?", listOf("if/else", "append()", "import", "range()"))
+)
+
+private val javascriptEnglish = listOf(
+    EnglishCopy("Basics", "What is JavaScript?", "JavaScript is a programming language that gives websites and many other applications behaviour. A click can open a menu or show a message. It runs in web browsers and can also run on servers.", "console.log displays a message in the developer console.", "Use JavaScript to display the text CodeQuest.", "What is JavaScript?", listOf("A programming language", "A browser", "A data type", "A database")),
+    EnglishCopy("Basics", "Where is JavaScript used?", "JavaScript is often part of a website: HTML describes its content, CSS its appearance, and JavaScript its behaviour. Apps and servers can use it too. The same language can help with many kinds of tasks.", "The line writes a status message to the console.", "Write a console message that says Page ready.", "What is a common use for JavaScript in a browser?", listOf("Responding to clicks", "Building the screen itself", "Charging a battery", "Making a keyboard")),
+    EnglishCopy("Basics", "Your first console.log()", "console.log() displays information in the developer console, not as text on the page. Put the information inside its parentheses. A text value needs quotation marks; a number can be calculated first.", "The first line displays text. The second calculates 5 and displays the number.", "Fill in the blank so that Hello appears in the console.", "What does console.log() do?", listOf("Writes information to the console", "Creates a website", "Saves a file", "Starts the browser")),
+    EnglishCopy("Basics", "Comments", "Comments explain code to people; JavaScript does not run them. // comments out the rest of a line. Use /* and */ around a longer comment that spans several lines.", "The first line is a note; the second line runs.", "Put a comment before a console.log command.", "How does a one-line JavaScript comment begin?", listOf("//", "#", "--", "**")),
+    EnglishCopy("Basics", "JavaScript syntax", "Syntax means the writing rules of a language. JavaScript is case-sensitive: console and Console are different names. Parentheses hold conditions, and curly braces group the instructions in a block.", "The parentheses hold the condition; the curly braces surround the block.", "Write an if block that displays Go when the condition is true.", "Are name and Name always the same in JavaScript?", listOf("No, letter case matters", "Yes, always", "Only for numbers", "Only in comments")),
+    EnglishCopy("Variables", "let", "let creates a changeable name for a value. You can assign a different value later. Choose a name that tells you what it stores so that your code is easier to understand.", "points starts at 0, increases by 10, and is then displayed as 10.", "Set lives to 3 with let, then increase it by 1.", "When should you use let?", listOf("When the value may change", "When it must never change", "For comments", "For functions")),
+    EnglishCopy("Variables", "const", "const creates a name that cannot be assigned a new value later. Use it when the binding should stay the same; it prevents accidental reassignment. An object stored in const can still have its contents changed.", "language is set once and cannot be assigned a different value.", "Create a const variable named country with the text Canada.", "What is true about a const binding?", listOf("The name cannot be reassigned", "Its value is automatically deleted", "It always creates an array", "It turns the value into a number")),
+    EnglishCopy("Variables", "var and why it is different", "var is the older way to declare a variable. Unlike let, it is scoped to a function rather than a block, which can make a name visible where you did not expect. let and const are usually clearer in new code.", "var stays visible outside the if block; let would be limited to the block.", "Create a let variable named score with the value 0.", "Which declarations are usually clearer in new code?", listOf("let and const", "Only var", "Only globals", "No variables")),
+    EnglishCopy("Variables", "Strings", "A string stores text. It can use single or double quotation marks. Template strings use backticks and can insert values with \${...}. Text and numbers are different kinds of values.", "The template string inserts the value of the name variable into the greeting.", "Store Mia in name and greet her using a template string.", "Which marks surround a template string?", listOf("Backticks `", "Square brackets", "A colon", "A slash")),
+    EnglishCopy("Variables", "Numbers", "JavaScript uses the Number type for whole and decimal numbers. Unlike Python, it does not separate them into Integer and Float types. Arithmetic operators let you calculate with them directly.", "4.5 is doubled, so the displayed result is 9.", "What does console.log(7 + 5) display? Write only the result.", "Which type does JavaScript use for both 3 and 3.5?", listOf("Number", "Separate Integer and Float types", "String", "Boolean")),
+    EnglishCopy("Variables", "Booleans", "A Boolean is either true or false. It can describe whether a game is running or a door is open. Unlike Python, JavaScript writes these values in lowercase.", "The variable stores the truth value true and displays it.", "Set isOnline to false and display it.", "How do you write the true value in JavaScript?", listOf("true", "True", "\"true\"", "1")),
+    EnglishCopy("Variables", "Undefined and null", "undefined means that a name has not been given a value yet. null means that you deliberately stored “no value.” They are similar ideas, but have different meanings in JavaScript.", "answer becomes undefined automatically; choice is deliberately set to null.", "Create let result without assigning a value, then display it.", "What does undefined usually mean?", listOf("No value has been assigned yet", "An empty list", "The text null", "False")),
+    EnglishCopy("Variables", "Data types", "typeof helps you inspect the type of a value. Strings, Numbers, and Booleans behave differently. Choosing the right type helps prevent surprising results.", "The output values are string, number, and boolean.", "Use typeof to check the type of the value 12.", "What does typeof 12 return?", listOf("number", "int", "string", "boolean")),
+    EnglishCopy("Variables", "Type conversion", "Type conversion changes a value into another type. Number(\"12\") makes a number from digit text; String(12) makes text from a number. The plus sign can add numbers or join text, so the type matters.", "The conversion gives the number 12; adding 3 produces 15.", "Convert the text \"8\" with Number() and add 2.", "What does Number(\"12\") do?", listOf("Converts valid numeric text to a Number", "Makes it a Boolean", "Deletes the value", "Always rounds it")),
+    EnglishCopy("Conditionals", "if", "if runs a block when its condition is true. Put the condition in parentheses and the instructions in curly braces. This lets a program respond to what is happening.", "20 is at least 18, so the block inside the braces runs.", "Display Start if points is greater than 0.", "When does an if block run?", listOf("When its condition is true", "Always", "When it is false", "Only with strings")),
+    EnglishCopy("Conditionals", "else", "else describes the other path when the if condition is false. Together, if and else make a clear either-or decision. Curly braces mark the two blocks of instructions.", "rain is false, so only the else block runs.", "Check tired: display Rest when true, otherwise Continue.", "When does else run?", listOf("When the if condition is false", "Before if", "Always as well", "Only in loops")),
+    EnglishCopy("Conditionals", "else if", "else if checks another case when the earlier conditions did not match. Order matters: once one branch matches, the remaining branches are skipped. General fallback cases usually come last.", "The first check is false; the second matches and displays Good.", "Use if for first place and else if for second place.", "What does else if check?", listOf("Another case", "A new function", "A list", "A comment")),
+    EnglishCopy("Conditionals", "Comparison operators", "=== checks that both the value and its type are equal; !== checks that they are different. <, >, <=, and >= compare numbers. === is usually safer than == because it avoids surprising type conversion.", "Both comparisons are true: the value is exactly 10 and is greater than 5.", "Check whether answer is strictly equal to \"Yes\".", "Which operator checks strict equality?", listOf("===", "=", "=>", "!==")),
+    EnglishCopy("Conditionals", "Logical operators", "&& means “and”: both conditions must be true. || means “or”: either true condition is enough. ! flips true to false and false to true. Use these operators to express several rules together.", "Entry is allowed only if the person is old enough and has a ticket.", "Check whether temperature is above 0 and below 30.", "When is A && B true?", listOf("When both are true", "When either one is true", "Always", "When both are false")),
+    EnglishCopy("Conditionals", "switch", "switch chooses a matching case for a value. case names one possibility; break stops execution from continuing into the next case. default is the fallback when no case matches.", "The value Mo matches the first case and displays Start; break ends the selection.", "Create a switch with a \"red\" case and a default output.", "Why is break useful in switch?", listOf("It ends the matching case", "It creates a variable", "It compares numbers", "It starts the next case")),
+    EnglishCopy("Loops", "for loops", "A for loop keeps its starting value, condition, and update together. It works well when you know how many times to repeat something. Make sure the counter changes so the condition eventually becomes false.", "i starts at 0, continues while it is less than 3, and increases by 1 each time.", "Use for to display the numbers 0, 1, and 2.", "How many times does the loop run?", listOf("3", "2", "4", "Forever")),
+    EnglishCopy("Loops", "while loops", "while repeats a block for as long as its condition is true. Change the state inside the block so the loop can eventually end. Otherwise, the program keeps checking the same true condition.", "The counter increases from 1 to 2 and then 3; at 3 the condition becomes false.", "Count from 1 to 2 with while and increase the value.", "When does while stop?", listOf("When its condition becomes false", "After console.log", "After a comment", "Never")),
+    EnglishCopy("Loops", "do while", "do while runs its block at least once and checks the condition afterward. This is useful when an action should happen before deciding whether to repeat it, such as asking for input.", "The block runs first with 1; then JavaScript checks whether another pass is allowed.", "Display Hello once in a do-while block.", "How many times does do while run at minimum?", listOf("Once", "Never", "Twice", "Forever")),
+    EnglishCopy("Loops", "break and continue", "break leaves the loop immediately. continue skips the rest of the current pass and starts the next one. These commands let you stop early or skip particular values.", "2 is skipped; the loop ends at 4. The visible values are 0, 1, and 3.", "Skip 2 and stop when the counter reaches 4.", "What does continue do?", listOf("Skips the current pass", "Ends the whole loop", "Restarts the program", "Adds an item")),
+    EnglishCopy("Loops", "for...of", "for...of gives you the next item in a collection on each pass. You do not need an index when you only care about the values. This often makes array code easier to read.", "tier is Dog on the first pass and Cat on the next.", "Use for...of to display every name in names.", "What does for...of give you from an array?", listOf("The current item", "Always the index", "The array length", "An object")),
+    EnglishCopy("Arrays and objects", "Arrays", "An array stores values in an ordered row. Square brackets surround its items, and commas separate them. An array can grow and often contains related values.", "colors contains three items in their original order.", "Create an array containing Bread and Milk.", "Which characters surround an array?", listOf("[]", "{}", "()", "<>")),
+    EnglishCopy("Arrays and objects", "Array elements", "Arrays count positions from index 0. array[0] reads the first item, and array.length gives the number of items. The last item is at length minus 1.", "The first access gives Red; the second gives Blue.", "Display the second item in the animals array.", "What index does the first item have?", listOf("0", "1", "-1", "2")),
+    EnglishCopy("Arrays and objects", "push and pop", "push() adds an item to the end of an array. pop() removes the last item and gives it back to you. Both methods change the original array.", "push adds Blue; pop then removes that last item again.", "Add Tea to drinks, then remove the last item with pop().", "What does push() do?", listOf("Adds an item at the end", "Removes the first item", "Sorts values", "Checks a type")),
+    EnglishCopy("Arrays and objects", "Objects", "An object groups related information under names. Its properties pair a key with a value. An object is a good way to describe a person with a name, age, and favourite colour.", "person.name reads the name property and gives Mia.", "Create a player object with name Ada and level 2.", "What does an object property pair contain?", listOf("A key and its value", "Only an index", "Only a number", "Two arrays")),
+    EnglishCopy("Arrays and objects", "Properties and methods", "A property is a value stored on an object. A method is a function that belongs to an object. Dot notation reads either one; add parentheses to call a method.", "name is a property. greet is a method that uses this.name for this particular object.", "Create a book object with a title and a method that returns it.", "How is a method different from a plain property?", listOf("A method is a function on an object", "A method is always a number", "A property is an array", "There is no difference")),
+    EnglishCopy("Functions", "Functions", "A function groups instructions under a name so you can call them again. A function declaration describes the steps; calling its name with parentheses runs them.", "The definition describes the action; wave() calls it.", "Define and call a start() function that displays Go.", "What does a function call do?", listOf("Runs the function block", "Always creates an array", "Ends the program", "Changes the syntax")),
+    EnglishCopy("Functions", "Parameters", "Parameters are named input spaces in a function. When you call it, you pass arguments into those spaces. That lets one function work with different information.", "name is the parameter; Ada is the argument passed in during the call.", "Write double(value) to display value multiplied by 2.", "What is an argument?", listOf("A value passed to a function call", "The function name", "A comment", "A loop")),
+    EnglishCopy("Functions", "return", "return sends a result back to the code that called the function. You can store that result or calculate with it. console.log only displays something; it is not a replacement for return.", "The function returns 5; a variable stores it and console.log displays it.", "Write square(number) so it returns number multiplied by itself.", "What does return do?", listOf("Returns a result", "Automatically displays a page", "Creates a parameter", "Starts a loop")),
+    EnglishCopy("Functions", "Arrow functions", "An arrow function is a shorter way to write a function using =>. The arrow separates the inputs from the function body. With one expression, its value can be returned directly.", "a and b are inputs; the expression after the arrow is returned as the result.", "Write an arrow function called double that returns a number multiplied by 2.", "Which symbol separates parameters and the function body?", listOf("=>", "==", "::", "->")),
+    EnglishCopy("Advanced basics", "Scope", "Scope describes where a name can be seen. A let or const declared inside curly braces belongs to that block and is not available outside it. A clear scope prevents accidental name conflicts.", "secret is available inside the if block; outside it, the name would not be defined.", "Create a local const message inside an if block and display it there.", "What does scope describe?", listOf("Where a name is visible", "The size of a number", "The length of an array", "An output")),
+    EnglishCopy("Advanced basics", "Callbacks", "A callback is a function passed to another function so it can be called later. This is useful for events such as clicks or tasks that finish later.", "The arrow function is passed in as a value and called inside done.", "Pass in a callback that writes Done to the console.", "What is a callback?", listOf("A function passed in for later", "A number type", "A loop", "An HTML element")),
+    EnglishCopy("Advanced basics", "Promises", "A Promise represents a result that will be available later. It can be pending, successful, or failed. then handles success, while catch handles an error.", "The Promise succeeds, and then receives the value Done.", "Create Promise.resolve with the value Ready and display it in then.", "What does a Promise represent?", listOf("A result that will arrive later", "A loop", "An object with no values", "A CSS rule")),
+    EnglishCopy("Advanced basics", "async and await", "async marks a function that returns a Promise. Inside it, await waits for a Promise's result without freezing the rest of the interface. Use try and catch to respond to errors.", "await waits for the value Ada; then the function displays it.", "Write an async function that awaits Promise.resolve(\"Hello\") and displays the result.", "Where can await be used in the basic pattern?", listOf("Inside an async function", "In any comment", "Only in arrays", "Nowhere")),
+    EnglishCopy("Advanced basics", "DOM basics", "The DOM is a tree-like representation of a web page that JavaScript can read and change. document.querySelector finds a matching element; textContent changes its text. This example describes browser code; CodeQuest does not execute it.", "JavaScript finds the first h1 heading and changes its visible text.", "Find the element with id status and set its textContent to Ready.", "What does querySelector() do?", listOf("Finds a matching element", "Creates a new array", "Starts a request", "Changes a font file")),
+    EnglishCopy("Advanced basics", "Mini project: Shopping list", "A small project combines arrays and functions. You can add items and display them with a loop. Break it into steps: store the data, change it, and show the result.", "push adds Milk; forEach calls the display function once for each list item.", "Create a list with Tea, add Water, and display every item.", "Which method adds an item to the array?", listOf("push()", "pop()", "querySelector()", "typeof")),
+    EnglishCopy("Advanced basics", "Mini project: Click counter", "A click counter combines state and events. A variable remembers the count; each event increases it and displays the new value. On a real web page, a button would trigger the event.", "clicks starts at 0; each call to count increases it by one.", "Make a counter that starts at 0, increases once, and displays the value.", "Which notation increases a number by one?", listOf("clicks++", "clicks--", "clicks == 1", "clicks = null"))
+)
+
+private val germanCodePhrases = mapOf(
+    "Hallo Welt" to "Hello world",
+    "Hallo!" to "Hello!",
+    "Hallo" to "Hello",
+    "Guten Morgen" to "Good morning",
+    "Guten Abend" to "Good evening",
+    "Willkommen im Python-Kurs!" to "Welcome to the Python course!",
+    "Willkommen" to "Welcome",
+    "Die Seite ist bereit" to "The page is ready",
+    "Seite bereit" to "Page ready",
+    "Hallo, " to "Hello, ",
+    "Lernen macht Spaß" to "Learning is fun",
+    "Ich wohne in " to "I live in ",
+    "Python lernen" to "Learn Python",
+    "Erwachsen" to "Adult",
+    "Fast erwachsen" to "Almost an adult",
+    "Noch jung" to "Still young",
+    "Gold" to "Gold",
+    "Silber" to "Silver",
+    "Bronze" to "Bronze",
+    "Richtig!" to "Correct!",
+    "Richtig" to "Correct",
+    "Leider falsch!" to "Not quite!",
+    "Zu niedrig!" to "Too low!",
+    "Zu hoch!" to "Too high!",
+    "Gewonnen!" to "You won!",
+    "Start" to "Start",
+    "Schritt 1" to "Step 1",
+    "Schritt 2" to "Step 2",
+    "Ziel" to "Finish",
+    "Rot" to "Red",
+    "Blau" to "Blue",
+    "Grün" to "Green",
+    "Hund" to "Dog",
+    "Katze" to "Cat",
+    "Brot" to "Bread",
+    "Milch" to "Milk",
+    "Äpfel" to "Apples",
+    "Wasser" to "Water",
+    "Käse" to "Cheese",
+    "Apfel" to "Apple",
+    "Mia" to "Mia",
+    "Max" to "Max",
+    "Sarah" to "Sarah",
+    "Leon" to "Leon",
+    "Ada" to "Ada",
+    "Sam" to "Sam",
+    "Milo" to "Milo",
+    "Python macht Spaß" to "Python is fun",
+    "Schirm" to "Umbrella",
+    "Sonne" to "Sunshine",
+    "Pause" to "Rest",
+    "Weiter" to "Continue",
+    "Spaziergang" to "Walk",
+    "Stopp" to "Stop",
+    "Los" to "Go",
+    "Fertig" to "Done",
+    "Bereit" to "Ready",
+    "Bitte eine Zahl eingeben" to "Please enter a number",
+    "Keine Zahl" to "Not a number",
+    "Versuch es noch einmal" to "Try again",
+    "Weiter üben" to "Keep practising",
+    "Üben" to "Practise",
+    "Gut" to "Good",
+    "Ja" to "Yes",
+    "Deutschland" to "Germany",
+    "sichtbar" to "visible",
+    "rot" to "red",
+    "Mo" to "Mon",
+    "Los" to "Go",
+    "Code" to "Code",
+    "Milo" to "Milo",
+    "Tee" to "Tea"
+)
+
+private val germanIdentifiers = mapOf(
+    "spielername" to "playerName",
+    "punktzahl" to "score",
+    "punkte" to "points",
+    "spieler" to "player",
+    "leben" to "lives",
+    "stadt" to "city",
+    "alter" to "age",
+    "preis" to "price",
+    "konto" to "account",
+    "online" to "online",
+    "name" to "name",
+    "antwort" to "answer",
+    "ergebnis" to "result",
+    "zahl" to "number",
+    "anzahl" to "count",
+    "temperatur" to "temperature",
+    "ist_offen" to "is_open",
+    "istOffen" to "isOpen",
+    "ist_tag" to "is_day",
+    "istTag" to "isDay",
+    "istOnline" to "isOnline",
+    "muede" to "tired",
+    "farbe" to "color",
+    "farben" to "colors",
+    "note" to "grade",
+    "platz" to "place",
+    "schritt" to "step",
+    "zeile" to "row",
+    "spalte" to "column",
+    "spiele" to "games",
+    "einkauf" to "shopping",
+    "einkaufsliste" to "shopping_list",
+    "getraenke" to "drinks",
+    "fruechte" to "fruit",
+    "produkt" to "item",
+    "artikel" to "item",
+    "tier" to "animal",
+    "tiere" to "animals",
+    "winke" to "wave",
+    "begruessung" to "greeting",
+    "begruesse" to "greet",
+    "sage_hallo" to "say_hello",
+    "addiere" to "add",
+    "verdopple" to "double",
+    "multiplizieren" to "multiply",
+    "quadrat" to "square",
+    "spieler" to "player",
+    "geheim" to "secret",
+    "tipp" to "guess",
+    "versuche" to "attempts",
+    "ist_online" to "is_online",
+    "bereit" to "ready",
+    "titel" to "title",
+    "zeige_titel" to "show_title",
+    "mein_hund" to "my_dog",
+    "hund" to "dog",
+    "mein_buch" to "my_book",
+    "buch" to "book",
+    "koordinaten" to "coordinates",
+    "nachricht" to "message",
+    "farbe" to "color"
+)
+
+private fun translateCode(code: String): String {
+    val literalPattern = Regex("\"([^\"\\n]*)\"|'([^'\\n]*)'|`([^`\\n]*)`")
+    var translated = literalPattern.replace(code) { match ->
+        val quote = match.value.first()
+        val content = match.groupValues.drop(1).firstOrNull(String::isNotEmpty).orEmpty()
+        val replacement = germanCodePhrases.entries
+            .sortedByDescending { it.key.length }
+            .fold(content) { text, (german, english) -> text.replace(german, english) }
+        "$quote$replacement$quote"
+    }
+    val commentTranslations = mapOf(
+        "# Begrüßung" to "# Greeting",
+        "# Begrüße die Lernenden" to "# Greet the learners",
+        "# Schreibe deinen Code hier..." to "# Write your code here...",
+        "// Begrüßung" to "// Greeting",
+        "/* Startmeldung */" to "/* Startup message */"
+    )
+    commentTranslations.forEach { (german, english) -> translated = translated.replace(german, english) }
+    germanIdentifiers.entries.sortedByDescending { it.key.length }.forEach { (german, english) ->
+        translated = Regex("\\b${Regex.escape(german)}\\b").replace(translated, english)
+    }
+    return translated
+}
+
+private fun buildEnglishLesson(source: Lesson, copy: EnglishCopy): Lesson {
+    return source.copy(
+        chapter = copy.chapter,
+        title = copy.title,
+        explanation = copy.explanation,
+        example = translateCode(source.example),
+        breakdown = copy.breakdown,
+        mistake = "Check the spelling carefully: names, brackets, indentation, and quotation marks each have a purpose.",
+        memory = "Remember: ${copy.title} becomes easier when you split the code into small steps.",
+        exercise = copy.exercise,
+        solution = translateCode(source.solution),
+        question = copy.question,
+        answers = copy.answers,
+        quizExplanation = "${copy.answers[source.correctAnswer]} — ${copy.breakdown}"
+    )
+}
+
+fun englishLesson(lesson: Lesson): Lesson {
+    val copies = if (lesson.language == Language.PYTHON) pythonEnglish else javascriptEnglish
+    val index = lesson.id.substringAfterLast('-').toIntOrNull() ?: return lesson
+    return copies.getOrNull(index)?.let { buildEnglishLesson(lesson, it) } ?: lesson
+}
+
+fun englishLessonsFor(language: Language): List<Lesson> =
+    lessonsFor(language).map(::englishLesson)

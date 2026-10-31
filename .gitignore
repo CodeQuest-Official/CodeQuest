@@ -1,0 +1,26 @@
+# Local Android SDK location
+local.properties
+
+# Generated build output and caches
+.gradle/
+.kotlin/
+**/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Android Studio / IntelliJ local project state
+.idea/
+*.iml
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Local signing credentials and environment files
+*.jks
+*.keystore
+keystore.properties
+.env
+.env.*
+!.env.example
